@@ -1,3 +1,3 @@
 # NYCDA May 2017 WDI (New York)
 
-* Basic HTML News Demo - (SpaceJam)[./spacejam]
+* Basic HTML News Demo - [SpaceJam](./tree/master/spacejam)

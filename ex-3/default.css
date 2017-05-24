@@ -1,0 +1,86 @@
+.box {
+	width: 200px;
+	height: 200px;
+	background-color: rgb(200,100,50);
+	border: 2px dashed #000;
+	float:left;
+	margin: 10px 15px;
+	transition-property: background-color margin;
+	transition-duration: 2s;
+	/*transition-timing-function: easeInBounce;*/
+}
+.box:hover {
+	margin: 30px 45px;
+	background-color: rgb(50,100,200);
+}
+#click_me {
+	width: 200px;
+	height: 200px;
+}
+#click_me.active {
+	background-image: url(img/boot.jpg);
+	background-size: cover;
+}
+
+img.equipment {
+	width: 300px;
+	height: 200px;
+	border: 3px dotted green;
+}
+div.equipment {
+	width: 300px;
+	height: 200px;
+	float: left;
+	margin: 15px;
+	border: 2px dotted green;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+body {
+	background-color: white;
+	transition: background-color 1s linear;
+}
+#boot {
+	background-image: url(img/boot.jpg);
+}
+#boot2 {
+	background-image: url(img/boot2.jpeg);
+}
+#pole {
+	background-image: url(img/pole.jpg);
+}
+#goggles {
+	background-image: url(img/goggles.jpg);
+}
+#jrskis {
+	background-image: url(img/jrskis.jpg);
+}
+#helmet {
+	background-image: url(img/helmet.jpg);
+}
+#chair {
+	background-image: url(img/chair.jpg);
+}
+
+
+@media (max-width: 800px) {
+	body {
+		background-color: green;
+	}
+}
+@media (max-width: 400px) {
+	body {
+		background-color: red;
+	}
+	div.equipment {
+		border: none;
+		width: 200px;
+		height: 140px;
+	}
+}
+
+
+
+
+

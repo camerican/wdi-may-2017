@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Space Jam News</title>
-</head>
-<body>
-	<nav>
-		<li><a href="#art2">NBA Playoff Update</a></li>
-		<li><a href="#art1">Space Jam Sequel</a></li>
-	</nav>
-	<h1>Space Jam Pressbox</h1>
-	<article id="art2">
-		<header>
-			<h2>NBA Playoffs</h2>
-			<h4>Warriors are Dominant</h4>
-			<h6>by Californian Dreamer</h6>
-			<img src="r-blue.gif" />
-		</header>
-		<p>The Golden State Warriors look to sweep the San Antonio Spurs out of the NBA playoffs tonight in Texas.  This is a wonderful tale of dominance by the Splash Brothers, Green, and Durant over the team basketball of Gregg Popovich's men who are without their star Kawhi Leonard.</p>
-		<footer>
-		&copy; SpaceJam 2017<br />
-		<img src="r-red.gif" />
-		</footer>
-	</article>
-	<article id="art1">
-		<header>
-			<h2>Sequel In the Works</h2>
-			<h4>Maybe</h4>
-			<h6>by Disreputable Reporter</h6>
-			<img src="r-blue.gif" />
-		</header>
-		<p>Critically acclaimed mega-blockbuster Space Jam is reportedly due to be back in theatres sometime within the next 10 years.</p>
-		<p>Kobe Bryant has agreed to terms to reprise the role made famous by Michael Jordan.</p>
-		<footer>
-		&copy; SpaceJam 2017<br />
-		<img src="r-red.gif" />
-		</footer>
-	</article>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Space Jam News</title>
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" type="text/css" href="default.css" />
+		<!-- <style type="text/css">
+			#art2 footer {
+				color: red;
+			}
+		</style> -->
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="#art2">NBA Playoff Update</a></li>
+				<li><a href="#art1">Space Jam Sequel</a></li>
+			</ul>
+		</nav>
+		<h1>Space Jam Pressbox</h1>
+		<article id="art2">
+			<header>
+				<h2>NBA Playoffs</h2>
+				<h4>Warriors are Dominant</h4>
+				<h6>by Californian Dreamer</h6>
+				<img class="hr" src="r-blue.gif" />
+			</header>
+			<img class="player" src="cp-jordan.jpg">
+			<p class="lede">The Golden State Warriors look to sweep the San Antonio Spurs out of the NBA <img class="player ewing" src="cp-ewing.jpg">playoffs tonight in Texas.  This is a wonderful tale of dominance by the <em>Splash Brothers</em>, Green, and Durant over the team basketball of Gregg Popovich's <img class="player bradley" src="cp-bradley.jpg"> men who are without their star Kawhi Leonard.</p>
+			<footer>
+				&copy; SpaceJam 2017<br />
+				<img class="hr" src="r-red.gif" />
+			</footer>
+		</article><!--
+		--><article id="art1">
+			<header>
+				<h2>Sequel In the Works</h2>
+				<h4>Maybe</h4>
+				<h6>by Disreputable Reporter</h6>
+				<img class="hr" src="r-blue.gif" />
+			</header>
+
+			<p class="lede">Critically acclaimed mega-blockbuster Space Jam is reportedly due to be back in <img class="player bogues" src="cp-bogues.jpg">theatres sometime within the next 10 years.</p>
+			<p>Kobe Bryant has agreed to terms to reprise the role made famous by Michael Jordan.</p>
+			<footer style="color:purple;">
+				&copy; SpaceJam 2017<br />
+				<img class="hr" src="r-red.gif" />
+				<span class="close">X</span>
+			</footer>
+		</article>
+<!-- 		<div id="modal">
+			<h3>Hello, I am a popup</h3>
+		</div> -->
+	</body>
 </html>

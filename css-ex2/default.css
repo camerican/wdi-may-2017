@@ -1,0 +1,39 @@
+h1 {
+	color: blue;
+/*	color: #0000ff;
+	color: rgb(0,0,255);*/
+}
+span {
+	border: 3px dashed rgb(255,100,100);
+	width: 200px;
+}
+.el2 {
+	display: inline-block;
+}
+.test {
+	display: block;
+}
+#my_container {
+	background-color: green;
+	text-align: center;
+}
+.yellow {
+	/*float: left;*/
+	background-color: yellow;
+	width: 200px;
+	height: 200px;
+	border: 2px solid black;
+	display: inline-block;
+	overflow-y: scroll;
+}
+/*.yellow.special {
+	clear: both;
+}*/
+@media (max-width: 626px) {
+	.yellow.special {
+		display: none;
+	}
+}
+
+
+

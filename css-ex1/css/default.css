@@ -1,0 +1,21 @@
+h1 {
+	font-family: Palatino, "Times New Roman", serif;
+	color: blue;
+}
+body {
+	background-image: url(../bg_stars.gif);
+}
+p {
+	font-family: arial;
+	color: green;
+}
+#master {
+	width: 600px;
+	height: 400px;
+	background-color:red;
+}
+#master .box {
+	width: 50%;
+	height: 200px;
+	background-color: rgba(0,255,0,0.8);
+}

@@ -1,0 +1,101 @@
+/** {
+	box-sizing: border-box;
+}*/
+body {
+	width: 800px;
+	margin: 0 auto;
+	background-color: orange;
+	color: white;
+	padding: 20px;
+	border: 30px double black;
+	background-image: url('bg_stars.gif');
+	background-repeat: repeat-y;
+	vertical-align: top;
+}
+p.lede {
+	font-size: 1.2em;
+}
+article {
+	display: inline-block;
+	width:390px;
+	min-height: 600px;
+	border: 2px dashed green;
+	position: relative;
+}
+#modal {
+	width: 400px;
+	height: 300px;
+	background-color: purple;
+	border: 4px dashed blue;
+	position: fixed;
+	top: 50px;
+	left: 200px;
+}
+article img.hr {
+	width: 400px;
+}
+.close {
+	font-size: 20px;
+	transition-property: transform;
+	transition-duration: 0.5s;
+	display: inline-block;
+}
+.close:hover {
+	transform: rotateZ(180deg);
+}
+img.player {
+	float: left;
+	transition-property: all;
+	transition-duration: 2s;
+}
+img.player:hover {
+	transform: rotateX(90deg) rotateZ(180deg);
+}
+img.player.ewing {
+	clear:left;
+	position: relative;
+	left: 20px;
+	animation-name: double-dribble;
+	animation-duration: 2s;
+}
+img.player.bradley {
+	clear:left;
+	left: 20px;
+	top: 0px;
+	position: absolute;
+}
+img.player.bogues {
+	float: right;
+	position: fixed;
+	animation-name: double-dribble;
+	animation-duration: 2s;
+}
+/* This is for headlines of articles */
+h2 {
+	text-align: center;
+}
+#art2 footer {
+	color: red;
+}
+/* Footer should be blue */
+footer {
+	color: blue;
+}
+footer {
+	color: yellow;
+}
+@keyframes double-dribble {
+	0% {
+		top:0;
+		left:0;
+	}
+	50% {
+		top: 300px;
+		left: 200px;
+	}
+	100% {
+		top:100px;
+		left:600px;
+	}
+}
+

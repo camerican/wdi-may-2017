@@ -1,0 +1,25 @@
+.door {
+	width: 300px;
+	height: 500px;
+	background-color: rgb(200,80,80);
+	border: 2px solid #000;
+	position: relative;
+	transition: all 1s;
+	display: inline-block;
+}
+.door::before {
+	position: absolute;
+	background-color: #111;
+	left: 10px;
+	top: 240px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	content: '';
+	z-index: 1;
+}
+.door.open {
+	transform-style: preserve-3d;
+	transform: rotateY(85deg);
+	transform-origin: right;
+}

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded",function(){
   elEmail = elForm.querySelector("input[name=email]");
   elH1.addEventListener("click",function(){
     // to do: change the innerText value...
-    elH1.innerText = "Please join the <em>TuneSquad</em> Mailing list";
+    elH1.innerHTML = "Please join the <em>TuneSquad</em> Mailing list";
   });
 
 });

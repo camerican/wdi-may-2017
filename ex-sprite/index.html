@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Sprite Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+</head>
+<body>
+	<h1>Sprite Demo</h1>
+	<p>Below, we have a div that will be sized via css and have its background image set to the sprite sheet.  By adjusting the positioning of the sprite sheet we can create for an animation appearance.</p>
+
+	<table id="states">
+		<tr>
+			<th></th>
+			<th>State</th>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run" checked></td>
+			<td>animate!</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="jump" checked></td>
+			<td>jump</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run1"></td>
+			<td>run1</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run2"></td>
+			<td>run2</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run3"></td>
+			<td>run3</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run4"></td>
+			<td>run4</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run5"></td>
+			<td>run5</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run6"></td>
+			<td>run6</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run7"></td>
+			<td>run7</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run8"></td>
+			<td>run8</td>
+		</tr>
+		<tr>
+			<td><input type="radio" name="state" value="run9"></td>
+			<td>run9</td>
+		</tr>
+	</table>
+
+	<div id="animation" class="jump"></div>
+	<hr />
+
+	<p>The above animation is made possible through use of a sprite sheet.  This particular sprite sheet contains 10 drawings of a character in a running motion.  We only want to display one at a time, which we can do through ensuring that the div size is only enough to fit a single drawing from the grid and then sliding the image around via background-position to create for the other frames.</p>
+	<img width="300px" src="img/sprite.png" />
+	<script src="js/main.js"></script>
+</body>
+</html>

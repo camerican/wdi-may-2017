@@ -1,0 +1,108 @@
+body {
+	font-size: 30px;
+	padding: 30px;
+	font-family: arial;
+}
+h1 {
+	margin:0;
+}
+#states {
+	float:right;
+	margin-right: 50px;
+	margin-left: 30px;
+}
+#animation {
+	width: 180px;
+	height: 210px;
+	background-image: url(../img/sprite.png);
+	background-position: 0 -33px;
+	/*background-color:red;*/
+}
+#animation.run {
+	/*animation: runner 1s infinite linear;*/
+	animation: runner2_h 1s steps(4) infinite , runner2_v 0.5s steps(1) infinite;
+}
+#animation.jump {
+	background-position: 0 -33px;
+}
+#animation.run1 {
+	background-position: -180px -33px;
+}
+#animation.run2 {
+	background-position: -360px -33px;
+}
+#animation.run3 {
+	background-position: -540px -33px;
+}
+#animation.run4 {
+	background-position: -720px -46px;
+}
+#animation.run5 {
+	background-position: 0 241px;
+}
+#animation.run6 {
+	background-position: -180px 241px;
+}
+#animation.run7 {
+	background-position: -360px 241px;
+}
+#animation.run8 {
+	background-position: -540px 241px;
+}
+#animation.run9 {
+	background-position: -720px 241px;
+}
+
+/* This style was a first crack at the animation... it relies upon the presumption that a 0.01% gap would not be perceptible.  It might be better if we used a step animation instead */
+@keyframes runner {
+	0%, 11% {
+		background-position: -180px -33px;
+	}
+	11.11%, 22.2% {
+		background-position: -360px -33px;
+	}
+	22.21%, 33.3% {
+		background-position: -540px -33px;
+	}
+	33.31%, 44.4% {
+		background-position: -720px -33px;
+	}
+	44.41%, 55.5% {
+		background-position: 0 241px;
+	}
+	55.51%, 66.6% {
+		background-position: -180px 241px;
+	}
+	66.61%, 77.7% {
+		background-position: -360px 241px;
+	}
+	77.71%, 88.8% {
+		background-position: -540px 241px
+	}
+	88.81%, 99.99% {
+		background-position: -720px 241px;
+	},
+	100% {
+		background-position: -180px -33px;
+	}
+}
+
+/* Second attempt */
+/* runner2_h will move us horizontally 720px from start to end (target 4 steps) */
+@keyframes runner2_h {
+	from {
+		background-position-x: 0px;
+	}
+	to {
+		background-position-x: 720px;
+	}
+}
+/* runner2_v will move us vertically from -33px to 241px (target 1 step) */
+@keyframes runner2_v {
+	from {
+		background-position-y: -33px;
+	}
+	to {
+		background-position-y: 241px;
+	}
+}

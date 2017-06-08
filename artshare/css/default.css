@@ -1,0 +1,7 @@
+.destroy {
+	background-color: rgba(90,30,30,0.8);
+	color: #fff;
+	border: 2px solid rgb(60,15,15);
+	cursor: pointer;
+	margin: 5px;
+}

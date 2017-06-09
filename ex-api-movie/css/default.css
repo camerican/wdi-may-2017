@@ -1,0 +1,62 @@
+body {
+	text-align: center;
+}
+#search {
+	width: 800px;
+	margin: 100px auto 0;
+	font-size: 30px;
+}
+#search input {
+	padding: 10px;
+	font-size: 1.25em;
+}
+#search input[name=search] {
+	width: 650px;
+}
+#search input[type=submit] {
+	width: 100px;
+}
+/* movie article style */
+#results {
+	width:800px;
+	margin: 0 auto;
+}
+.movie, .movie * {
+	box-sizing: border-box;
+}
+.movie {
+	width: 400px;
+	float: left;
+}
+.movie .info {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	background-image: linear-gradient( 45deg, blue, red ); ;
+}
+.movie .title {
+	position: absolute;
+	font-family: "Indie Flower";
+	padding: 5px 5px 5px 20px;
+	text-align: left;
+	font-size: 2em;
+	left: 0;
+	top: 15px;
+	width: 300px;
+	background-color: rgba(200,200,200,0.3);
+}
+.movie .popularity {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 30px;
+	background-color: rgba(30,240,30,0.7);
+}
+.movie .detail {
+	display: none;
+}
+
+
+
+
+

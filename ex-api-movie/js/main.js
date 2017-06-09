@@ -10,6 +10,7 @@ $(document).ready(function(){
     $("#results").html(''); // clear out prior results
     // document.querySelector("#search input[name=search]").value
     var term = $("#search input[name=search]").val();
+    var imgDefault = 'k6Eu1TyYnOErJ1OqzLwq6i7b3zM.jpg';
     var api_key = "8ad8cedce767d0d34ef524fea3a01117";
     console.log( "Search Term:", term );
 
@@ -33,7 +34,7 @@ $(document).ready(function(){
       function(response) {
        // console.log(response);
         response.results.forEach(function(movie,index){
-          var bgImg = 'url(http://image.tmdb.org/t/p/w500/' + movie.poster_path + ')';
+          var bgImg = 'url(http://image.tmdb.org/t/p/w500/' + (movie.poster_path || imgDefault)  + ')';
           var template = 
             `<article class="movie" id="movie_${index}">
               <div class="info" style="background-image: ${bgImg};">
@@ -42,7 +43,7 @@ $(document).ready(function(){
               </div>
               <footer class="detail">${movie.overview}</footer>
             </article>`;
-            
+          
           // template.style.backgroundImage = bgImg;
           console.log( index+1, movie.title, bgImg );
           $("#results").append(template);

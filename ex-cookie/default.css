@@ -1,0 +1,16 @@
+/* 64x64 */
+#daffy {
+	width: 64px;
+	height: 64px;
+	background-image: url(img/daffy.png);
+	animation: forward 1.5s steps(4) infinite;
+}
+
+@keyframes forward {
+	from{
+		background-position-x: 0;
+	}
+	to{
+		background-position-x: 256px;
+	}
+}

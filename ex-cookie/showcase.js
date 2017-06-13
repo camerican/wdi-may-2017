@@ -17,15 +17,16 @@ $(document).ready(function(){
     // and show the showcase
     let fireworks = 20;
     let intervalId = setInterval(function(){
+      //console.log( window.player.volume )
       // stop the show if we've finished our fireworks up
       if( !fireworks ) { 
         clearInterval(intervalId);
         let volControl = setInterval(function(){
-          if( window.player.volume <= 0 ) { 
+          if( window.player.getVolume() <= 0 ) { 
             clearInterval(volControl);
             window.player.pause();
           }
-          window.player.volume = window.player.volume - 0.1;
+          window.player.setVolume(window.player.getVolume() - 0.1);
         },100);
       }
       // store a reference to our new firework

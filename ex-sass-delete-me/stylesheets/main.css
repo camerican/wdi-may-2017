@@ -1,0 +1,164 @@
+/*
+	You're a great person, really
+	*/
+h1 {
+  font-size: 72px; }
+
+h2 {
+  font-size: 60px; }
+
+h3 {
+  font-size: 48px; }
+
+h4 {
+  font-size: 36px; }
+
+h5 {
+  font-size: 24px; }
+
+h6 {
+  font-size: 12px; }
+
+body {
+  color: #d6d6d6;
+  font-size: 32px;
+  background-color: #3c553c;
+  text-align: center; }
+
+small, .tiny {
+  font-size: 16px; }
+
+.tiny {
+  color: #4499DD; }
+
+nav {
+  background-color: #AA77AA; }
+  nav ul {
+    list-style-type: none; }
+  nav li {
+    display: inline-block; }
+
+#container {
+  height: 32px; }
+
+.person {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  background-size: cover;
+  position: relative; }
+
+.person::before {
+  color: #77AA77;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.person::after {
+  color: #AA77AA;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.person.katy {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U5G6AAE69-g89723df0da0-512); }
+
+.person.katy::before {
+  content: "Katy Pola"; }
+
+.person.katy::after {
+  content: "@katypola"; }
+
+.person.nick {
+  background-image: url(https://ca.slack-edge.com/T7JJLPSP-U5B1FU4P4-gb1487de5703-512); }
+
+.person.nick::before {
+  content: "Nick Fehlinger"; }
+
+.person.nick::after {
+  content: "@nickfehlinger"; }
+
+.person.david {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U5BR1FKU6-b2ead401c899-512); }
+
+.person.david::before {
+  content: "Dennis California"; }
+
+.person.david::after {
+  content: "@davidzheng"; }
+
+.person.hans {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U5BSQAMDM-0311b9f5809d-512); }
+
+.person.hans::before {
+  content: "Hans Palacios"; }
+
+.person.hans::after {
+  content: "@hanspalacios"; }
+
+.person.victor {
+  background-image: url(https://ca.slack-edge.com/T2JJLPSP-U5B5A9Z3N-3f9c35405881-512); }
+
+.person.victor::before {
+  content: "Victor Ganda"; }
+
+.person.victor::after {
+  content: "@gsta"; }
+
+.person.james {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U5GSWD5N2-fe9d901c2ba9-512); }
+
+.person.james::before {
+  content: "James Lim"; }
+
+.person.james::after {
+  content: "@jameslim"; }
+
+.person.steve {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U5B29KYDQ-c0af82cbc988-512); }
+
+.person.steve::before {
+  content: "Steven Velez-Garcia"; }
+
+.person.steve::after {
+  content: "@steven.velez"; }
+
+.person.neil {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U5H66R4UX-26691fb34342-512); }
+
+.person.neil::before {
+  content: "Neil Parsa"; }
+
+.person.neil::after {
+  content: "@geffern"; }
+
+.person.erin {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U5BTS77BQ-7cbe4f6162b0-512); }
+
+.person.erin::before {
+  content: "Erin Young"; }
+
+.person.erin::after {
+  content: "@erinkarlayoung"; }
+
+.person.logan {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U5E5AMJ5T-5d41d782d1ef-512); }
+
+.person.logan::before {
+  content: "Logan Baker"; }
+
+.person.logan::after {
+  content: "@lobaker13"; }
+
+.person.julia {
+  background-image: url(https://ca.slack-edge.com/T03JJLPSP-U4GNR21PZ-e9b07828a0df-512); }
+
+.person.julia::before {
+  content: "Julia Kopyeva"; }
+
+.person.julia::after {
+  content: "@jakjak"; }
+
+/* To do: Add in main display options */
+
+/*# sourceMappingURL=main.css.map */

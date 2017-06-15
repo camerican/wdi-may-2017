@@ -1,0 +1,151 @@
+@import 'bourbon/bourbon';
+$color-primary: #77AA77;
+$color-secondary: #AA77AA;
+$color-text: #333;
+$color-background: shade($color-primary,50%);
+$color-action: #AA7777;
+$color-accent: #999977;
+
+/*
+	You're a great person, really
+	*/
+
+// A mean comment about someone I dislike
+@mixin black($opacity){
+	background-color: rgba(0,0,0,$opacity);
+}
+@mixin white($opacity){
+	background-color: rgba(255,255,255,$opacity);
+}
+
+// h1 (72px) through h6 (12px)
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: 84px - $i * 12px;
+  }
+}
+
+
+$font-size: 32px;
+body {
+  color: tint($color-text,80%);
+  font-size: $font-size;
+  // @include black(0.6);
+  background-color: $color-background;
+  text-align: center;
+}
+small {
+  font-size: $font-size / 2;
+}
+.tiny {
+	@extend small;
+	color: #4499DD;
+}
+@import 'nav';
+#container{
+  height: $font-size;
+}
+$roster: (
+	katy: (
+		fname: 'Katy',
+		lname: 'Pola',
+		img: 'https://ca.slack-edge.com/T03JJLPSP-U5G6AAE69-g89723df0da0-512',
+		slack: 'katypola'
+	),
+	nick: (
+		fname: 'Nick',
+		lname: 'Fehlinger',
+		img: 'https://ca.slack-edge.com/T7JJLPSP-U5B1FU4P4-gb1487de5703-512',
+		slack: 'nickfehlinger'
+	),
+  david: (
+  	fname: 'Dennis',
+  	lname: 'California',
+  	img: 'https://ca.slack-edge.com/T03JJLPSP-U5BR1FKU6-b2ead401c899-512',
+  	slack: 'davidzheng'
+  ),
+  hans: (
+  	fname: 'Hans',
+  	lname: 'Palacios',
+  	img: 'https://ca.slack-edge.com/T03JJLPSP-U5BSQAMDM-0311b9f5809d-512',
+  	slack: 'hanspalacios'
+  ),
+  victor: (
+  	fname: 'Victor',
+  	lname: 'Ganda',
+  	img: 'https://ca.slack-edge.com/T2JJLPSP-U5B5A9Z3N-3f9c35405881-512',
+  	slack: 'gsta'
+  ),
+  james: (
+  	fname: 'James',
+  	lname: 'Lim',
+  	img: 'https://ca.slack-edge.com/T03JJLPSP-U5GSWD5N2-fe9d901c2ba9-512',
+  	slack: 'jameslim'
+  ),
+  steve: (
+  	fname: 'Steven',
+  	lname: 'Velez-Garcia',
+  	img: 'https://ca.slack-edge.com/T03JJLPSP-U5B29KYDQ-c0af82cbc988-512',
+  	slack: 'steven.velez'
+  ),
+  neil: (
+  	fname: 'Neil',
+  	lname: 'Parsa',
+  	img: 'https://ca.slack-edge.com/T03JJLPSP-U5H66R4UX-26691fb34342-512',
+  	slack: 'geffern'
+  ),
+  erin: (
+  	fname: 'Erin',
+  	lname: 'Young',
+  	img: 'https://ca.slack-edge.com/T03JJLPSP-U5BTS77BQ-7cbe4f6162b0-512',
+  	slack: 'erinkarlayoung'
+  ),
+  logan: (
+  	fname: 'Logan',
+  	lname: 'Baker',
+  	img: 'https://ca.slack-edge.com/T03JJLPSP-U5E5AMJ5T-5d41d782d1ef-512',
+  	slack: 'lobaker13'
+  ),
+  julia: (
+  	fname: 'Julia',
+  	lname: 'Kopyeva',
+  	img: 'https://ca.slack-edge.com/T03JJLPSP-U4GNR21PZ-e9b07828a0df-512',
+  	slack: 'jakjak'
+  )
+);
+
+.person {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  background-size: cover;
+  position: relative;
+}
+.person::before {
+  color: $color-primary;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.person::after {
+  color: $color-secondary;
+  position:absolute;
+  bottom: 0;
+  right: 0;
+}
+@each $key, $data in $roster { 
+	.person.#{$key} {
+		background-image: url(#{map-get($data,img)});
+	}
+	.person.#{$key}::before {
+		content: '#{map-get($data,fname)} #{map-get($data,lname)}';
+	}
+	.person.#{$key}::after {
+		content: '@#{map-get($data,slack)}';
+	}
+}
+
+
+
+/* To do: Add in main display options */

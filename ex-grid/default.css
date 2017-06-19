@@ -1,0 +1,16 @@
+body {
+	text-align:center;
+}
+table {
+	display: inline-block;
+	height: 96vw;
+	width: 96vw;
+}
+td {
+	background: linear-gradient(135deg, lightblue, lightgrey);
+	width: 4vw;
+	height: 4vw;
+}
+td.active{
+	background: linear-gradient(135deg, lightblue, teal);
+}

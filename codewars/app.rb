@@ -2,6 +2,7 @@ require 'sinatra'
 # using SendGrid's Ruby Library
 # https://github.com/sendgrid/sendgrid-ruby
 require 'sendgrid-ruby'
+require './models'
 include SendGrid
 
 get '/' do

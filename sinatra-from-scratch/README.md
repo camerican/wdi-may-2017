@@ -177,5 +177,27 @@ end
 And create our views.  `mkdir views` and then `touch views/home.erb views/profile.erb`.
 
 
+## Rake commands
 
+| Command | Description | Example |
+| ---- | ---- | ---- |
+| db:create_migration | Creates a migration file | rake db:create_migration NAME=initialize_database |
+| db:migrate | Runs all pending migrations | rake db:migrate |
+| db:rollback | Reverse one migration | rake db:rollback |
+| db:drop | Remove database entirely | rake db:drop |
+| db:reset | drop data and re-migrate + reseed | rake db:reset |
+| db:seed | Run a seeds.rb file to generate initial data | rake db:seed |
+
+## File inventory
+
+| File | description |
+| ---  | ------ |
+| server.rb | Main application file |
+| models.rb | Defines activerecord models so we can access database tables efficiently |
+| views/* | holds our erb templates to display HTML + embedded ruby |
+| db/migrate/* | holds migration files that modify the databse schema |
+| db/seeds.rb | Creates our initial data rows using our active record models defined in models.rb |
+| db/schema.rb | Created by rake db:migrate - the current state of our database |
+| Gemfile | Defines library files that we can install with bundler |
+| Rakefile | Requires necessary files for our rake task runner to work |
 

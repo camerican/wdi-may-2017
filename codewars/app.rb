@@ -2,11 +2,15 @@ require 'sinatra'
 # using SendGrid's Ruby Library
 # https://github.com/sendgrid/sendgrid-ruby
 require 'sendgrid-ruby'
-require './models'
 include SendGrid
+require 'sinatra/activerecord'
+set :database, {adapter: "sqlite3", database: "db/codewars.db"}
+require './models'
 
 get '/' do
-  @roster = %w(Julia Logan Nick Katy Dennis Neil Hans James Victor Steven Erin)
+  #@roster = %w(Julia Logan Nick Katy Dennis Neil Hans James Victor Steven Erin)
+  #@roster = User.all.map{|u| u.first_name }
+  @roster = User.all
   erb :home
 end
 
@@ -47,6 +51,7 @@ get '/profile/:person' do
     Victor: 'Loves Sinatra',
     Steven: 'Hates Ruby in General',
     Erin: 'Loves Sinatra'}
+  @user = User.where(first_name: params[:person])
   @profile = @roster[params[:person].to_sym]
   erb :profile
 end

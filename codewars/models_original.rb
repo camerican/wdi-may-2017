@@ -6,11 +6,19 @@ class User
     sql_results_parser results
   end
 
+  def self.find id
+    sql_results_parser(`sqlite3 db/codewars.db "SELECT * FROM users WHERE id = #{id}";`).first
+  end
+
   def self.first
+    User.all.first
   end
 
   def self.last
+    User.all.last
   end
+
+
   # `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   # `first_name` VARCHAR(64),
   # `last_name` VARCHAR(64),

@@ -1,4 +1,5 @@
 	<h1>Codewars Challengers</h1>
-	<p><%= @profile[:profile] %></p>
-	<img src="<%= @profile[:image] %>" />
+	<p><%= @profile %></p>
+	<h3><%= @user.full_name if @user.is_a? User %></h3>
+	
 	

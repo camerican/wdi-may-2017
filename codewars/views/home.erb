@@ -2,6 +2,6 @@
 	Secret key: <strong><%= ENV['HANS_SALTY_ASSAULT_CONSULTING_API'] %></strong>
 	<ul>
 	<% @roster.each do |person| %>
-	<li><a href="/profile/<%= person %>"><%= person %></a></li>
+	<li><a href="/profile/<%= person.first_name %>"><%= person.full_name %></a></li>
 	<% end %>
 	</ul>

@@ -1,0 +1,8 @@
+	<h1>Welcome to Hacker.net</h1>
+	<p>We have the world's most elite hackers at your disposal.  If you would like them to take down an enemy of yours, please inquire within.</p>
+
+	<ul>
+	<% @users.each do |user| %>
+	<li><a href="/user/<%= user.id %>"><%= user.full_name %></a></li>
+	<% end %>
+	</ul>

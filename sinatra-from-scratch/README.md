@@ -126,6 +126,55 @@ end
 
 - [ ] And now we'll run our migration: `bundle exec rake db:migrate`
 
+### Instruct our Models to Inherit form Active Record
+
+- [ ] add a User class
+- [ ] add a Post class
+
+```ruby
+class User < ActiveRecord::Base
+
+end
+class Post < ActiveRecord::Base
+
+end
+```
+
+Let's now define the relationships between our models/tables:
+
+```ruby
+class User < ActiveRecord::Base
+  has_many :posts
+end
+class Post < ActiveRecord::Base
+  belongs_to :user
+end
+```
+
+
+### Create Initial Data to work with
+
+We'll create a seeds.rb file to get our system up and running with some data.  This is a good idea for any system to have, so we can have data for testing/presenting with and easily go back to a blank slate without having a totally empty databse.
+
+- [ ] `touch db/seeds.rb`
+
+### Create routes for our site
+
+- [ ] We'll create a home page route and a profile page route, and then touch out the erb files.
+
+```ruby
+get '/' do
+  @users = User.all
+  erb :home
+end
+
+get '/user/:id' do
+  @user = User.find(params[:id])
+  erb :profile
+end
+```
+
+And create our views.  `mkdir views` and then `touch views/home.erb views/profile.erb`.
 
 
 

@@ -1,0 +1,9 @@
+	<h2><%= @user.full_name %></h2>
+	<p><%= @user.first_name %> can be contacted at <a href="mailto:<%= @user.email %>?subject=Need Elite Hackers"><%= @user.email %></a>.  Please be polite.</p>
+
+	<h4>Posts by <%= @user.first_name %></h4>
+	<ol>
+		<% @user.posts.each do |post| %>
+			<li><%= post.title %></li>
+		<% end %>
+	</ol>

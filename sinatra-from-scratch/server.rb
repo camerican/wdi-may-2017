@@ -7,5 +7,11 @@ set :database, {adapter: "sqlite3", database: "db/hack.db"}
 require './models'
 
 get '/' do
-  'Hello, my hacker nemesis.  Prepare to be hacked. Mwahaha.'
+  @users = User.all
+  erb :home
+end
+
+get '/user/:id' do
+  @user = User.find(params[:id])
+  erb :profile
 end

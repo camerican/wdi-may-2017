@@ -1,0 +1,29 @@
+
+	<h2>Your Account information</h2>
+	<form method="post">
+	<table>
+		<tr>
+			<th>Field</th>
+			<th>Value</th>
+		</tr>
+		<tr>
+			<td>First Name</td>
+			<td><input name="fname" value="<%= @current_user.fname %>" ></td>
+		</tr>
+		<tr>
+			<td>Last Name</td>
+			<td><input name="lname" value="<%= @current_user.lname %>" ></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input name="email" disabled="true" value="<%= @current_user.email %>"></td>
+		</tr>
+		<tr>
+			<td>Current Password</td>
+			<td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Update Profile"></td>
+		</tr>
+	</table>
+	</form>

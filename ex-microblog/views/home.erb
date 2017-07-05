@@ -1,0 +1,14 @@
+
+<h1>Welcome to our Microblog</h1>
+<%= erb :login %>
+
+<% if @users %>
+	<h3>Our Users</h3>
+	<ul>
+	<% @users.each do |user| %>
+	<li><a href="/user/<%= user.id %>"><%= user.full_name %></a></li>
+	<% end %>
+	</ul>
+<% else %>
+	<h3>We have no users at the moment...  So sad!</h3>
+<% end %>

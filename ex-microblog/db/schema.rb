@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170705190641) do
     t.string "title"
     t.text "body"
     t.integer "user_id"
+    t.boolean "is_published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170705190641) do
     t.string "lname"
     t.string "email"
     t.string "password"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -20,12 +20,12 @@ before do
   #redirect "/#{@post.user.username}"
 end
 
-before ['/write','/profile'] do
+before ['/write','/profile','/post/:id/delete'] do
   redirect '/' unless @current_user 
 end
 
 get '/' do
-  @users = User.all
+  @users = User.where.not(status: :deleted)
  # @posts = Post.order( created_at: :desc).limit(10)
   @posts = Post.recent
   erb :home
@@ -88,11 +88,24 @@ get '/user/:id' do
   erb :user
 end
 
+get '/user/:id/delete' do
+  #to do: only admins can do this...
+  @user = User.find(params[:id])
+  if !@user
+    flash[:message] = "Couldn't locate that user, sorry"
+  elsif @user.update( status: :deleted )
+    flash[:message] = "User deleted, nice work"
+  else
+    flash[:message] = "There was a problem on our back end.  Sorrrry"
+  end
+  redirect '/'
+end
+
 get '/post/:id/delete' do
   @post = Post.find( params[:id] )
   if @post.user_id != @current_user.id
     flash[:message] = "You dirty dog, that's not your post!"
-  elsif @post.destroy
+  elsif @post.update(is_published: false)
     flash[:message] = "Deleted post"
   else
     flash[:message] = "Your post could not be deleted"
@@ -104,4 +117,16 @@ get '/post/:id' do
   @post = Post.find( params[:id] )
   erb :post
 end
+
+get '/profile' do
+  # if !@current_user
+  unless @current_user 
+    flash[:message] = "Sign in to access your profile"
+    redirect '/login'
+  end
+  flash[:message] = "Welcome, #{@current_user.first_name}"
+  erb :profile
+end
+
+
 

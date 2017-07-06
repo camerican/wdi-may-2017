@@ -5,6 +5,7 @@ class CreateDatabase < ActiveRecord::Migration[5.1]
       t.string :lname
       t.string :email
       t.string :password
+      t.integer :status
       t.timestamps 
     end
     create_table :posts do |t|
@@ -12,6 +13,7 @@ class CreateDatabase < ActiveRecord::Migration[5.1]
       t.text :body
       #t.integer :user_id
       t.belongs_to :user, foreign_key: true
+      t.boolean :is_published
       t.timestamps
       # t.datetime created_at
       # t.datetime updated_at

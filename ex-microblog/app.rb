@@ -17,6 +17,7 @@ before do
   # else
   #   @current_user = nil
   # end
+  #redirect "/#{@post.user.username}"
 end
 
 before ['/write','/profile'] do
@@ -25,6 +26,8 @@ end
 
 get '/' do
   @users = User.all
+ # @posts = Post.order( created_at: :desc).limit(10)
+  @posts = Post.recent
   erb :home
 end
 
@@ -83,6 +86,18 @@ end
 get '/user/:id' do 
   @user = User.find( params[:id] )
   erb :user
+end
+
+get '/post/:id/delete' do
+  @post = Post.find( params[:id] )
+  if @post.user_id != @current_user.id
+    flash[:message] = "You dirty dog, that's not your post!"
+  elsif @post.destroy
+    flash[:message] = "Deleted post"
+  else
+    flash[:message] = "Your post could not be deleted"
+  end
+  redirect '/'
 end
 
 get '/post/:id' do

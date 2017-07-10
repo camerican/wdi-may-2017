@@ -1,0 +1,9 @@
+
+
+<%= form_for @user, url: user_path(@user), html: {method: :put } do |f| %>
+	<%= f.text_field :email %>
+	<%= f.password_field :password%>
+	<%= f.text_field :fname %>
+	<%= f.text_field :lname %>
+	<%= f.submit 'Update Account' %>
+<% end %>

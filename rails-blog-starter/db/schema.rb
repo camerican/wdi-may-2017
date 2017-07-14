@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170711142200) do
     t.string "fname", limit: 128
     t.string "lname", limit: 128
     t.string "email"
+    t.integer "status"
     t.string "password", limit: 32
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

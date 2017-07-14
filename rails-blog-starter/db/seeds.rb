@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-  {fname: 'Cam', lname: 'Crews', email: 'cam@nycda.com', password: 'test'},
-  {fname: 'Logan', lname: 'Baker', email: 'floridian@fl.com', password: 'test'},
-  {fname: 'Nick', lname: 'Fehlinger', email: 'nick@nick.com', password: 'test'}
+  {fname: 'Cam', lname: 'Crews', email: 'cam@nycda.com', password: 'test', status: :active},
+  {fname: 'Logan', lname: 'Baker', email: 'floridian@fl.com', password: 'test', status: :active},
+  {fname: 'Nick', lname: 'Fehlinger', email: 'nick@nick.com', password: 'test', status: :active}
 ])
 
 Post.create([

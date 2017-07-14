@@ -1,0 +1,21 @@
+<% if @current_user %>
+	<nav>
+		<li><%= link_to @current_user.fname, @current_user %></li>
+		<%= content_tag :li, class: 'logout' do 
+			link_to 'Logout', logout_path, method: :delete 
+		end %>
+	</nav>
+<% else %>
+	<%= form_tag login_path do %>
+		<%= text_field_tag :email %>
+		<%= password_field_tag :password %>
+		<%= submit_tag %>
+	<% end %>
+	<%= link_to 'Create an Account', new_user_path %>
+<% end %>
+
+<ol>
+<% @posts.each do |post| %>
+	<li><%= link_to post.title, post %></li>
+<% end %>
+</ol>

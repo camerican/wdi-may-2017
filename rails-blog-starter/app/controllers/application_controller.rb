@@ -13,5 +13,8 @@ class ApplicationController < ActionController::Base
       session[:user_id] = nil
     end
   end
+  def authenticate
+    redirect_to :root unless @current_user
+  end
 
 end

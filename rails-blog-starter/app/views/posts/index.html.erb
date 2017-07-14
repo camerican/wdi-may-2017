@@ -2,6 +2,8 @@
 
 <h1>Posts</h1>
 
+<%= image_tag "http://cimages.prvd.com/is/image/ProvideCommerce/GFB_16_SCA6VANBEAN_CH1837_W1_SQ?$SSSProductImage$", class: 'dennis_celebration_day' %>
+
 <table>
   <thead>
     <tr>
@@ -17,11 +19,19 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
-        <td><%= post.user %></td>
+        <td><%= post.user.full_name %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+        <% post.comments.each do |comment| %>
+        <tr>
+        <td colspan="4"><%= comment.body %></td>
+        <td><%= link_to comment.user.fname, comment.user %></td>
+        <td><%= time_ago_in_words comment.created_at %></td>
+        </tr>
+        <% end %>
+      
     <% end %>
   </tbody>
 </table>

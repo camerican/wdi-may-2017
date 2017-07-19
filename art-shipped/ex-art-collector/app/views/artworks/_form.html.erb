@@ -1,0 +1,37 @@
+<%= form_with(model: artwork, local: true) do |form| %>
+  <% if artwork.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(artwork.errors.count, "error") %> prohibited this artwork from being saved:</h2>
+
+      <ul>
+      <% artwork.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :artwork_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :artist_id %>
+    <%= form.text_field :artist_id, id: :artwork_artist_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completed_at %>
+    <%= form.datetime_select :completed_at, id: :artwork_completed_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :artwork_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

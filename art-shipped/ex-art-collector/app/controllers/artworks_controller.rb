@@ -41,7 +41,11 @@ class ArtworksController < ApplicationController
   # PATCH/PUT /artworks/1.json
   def update
     respond_to do |format|
-      if @artwork.update(artwork_params)
+      @artwork.update_attributes(artwork_params)
+      if params[:artwork][:keyword_ids]
+        @artwork.keywords = Keyword.where( id: params[:artwork][:keyword_ids] )
+      end
+      if @artwork.save
         format.html { redirect_to @artwork, notice: 'Artwork was successfully updated.' }
         format.json { render :show, status: :ok, location: @artwork }
       else
@@ -69,6 +73,6 @@ class ArtworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:name, :artist_id, :completed_at, :status)
+      params.require(:artwork).permit(:name, :artist_id, :completed_at, :status, :image, :keyword_ids)
     end
 end

@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(version: 20170719150329) do
     t.integer "artist_id"
     t.datetime "completed_at"
     t.integer "status"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_artworks_on_artist_id"

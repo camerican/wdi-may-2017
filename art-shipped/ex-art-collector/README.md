@@ -21,3 +21,22 @@ ref: https://stackoverflow.com/questions/9673484/is-there-a-way-to-generate-a-ra
 
 # rails g resource Foo bar:text
 rails g scaffold_controller Foo --skip-template-engine
+
+
+Artwork.joins("INNER JOIN artwork_keywords ON artworks.id = artwork_keywords.artwork_id INNER JOIN keywords ON artwork_keywords.keyword_id = keywords.id WHERE 0 OR keywords.name = 'impressionist' OR keywords.name = 'symbolism'").distinct
+
+
+ar_base = Artwork.joins("INNER JOIN artwork_keywords ON artworks.id = artwork_keywords.artwork_id INNER JOIN keywords ON artwork_keywords.keyword_id = keywords.id")
+
+search_terms = ["symbolism", "impressionism", "textile", "sculpture"]
+
+search_terms.each 
+
+
+
+
+
+
+
+
+

@@ -2,6 +2,14 @@
 
 <h1>Artworks</h1>
 
+
+<div>
+  <h2>Search by Keywords</h2>
+  <% Keyword.all.each do |keyword| %>
+    <%= link_to keyword.name, search_path(t: keyword.name) %>
+  <% end %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -17,9 +25,9 @@
     <% @artworks.each do |artwork| %>
       <tr>
         <td><%= artwork.name %></td>
-        <td><%= artwork.artist %></td>
+        <td><%= artwork.artist.name %></td>
         <td><%= artwork.completed_at %></td>
-        <td><%= artwork.status %></td>
+        <td><span class="artwork-status"><%= artwork.status %></span> <%= link_to "-", artwork_downgrade_path(artwork), method: :patch, remote: true, class: "artwork-status-change" %> <%= link_to "+", artwork_upgrade_path(artwork), method: :patch, remote: true, class: "artwork-status-change" %></td>
         <td><%= link_to 'Show', artwork %></td>
         <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
         <td><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>

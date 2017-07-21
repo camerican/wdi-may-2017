@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-  before_action :set_artwork, only: [:show, :edit, :update, :destroy]
+  before_action :set_artwork, only: [:show, :edit, :update, :destroy, :upgrade, :downgrade]
 
   # GET /artworks
   # GET /artworks.json
@@ -62,6 +62,32 @@ class ArtworksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to artworks_url, notice: 'Artwork was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # upgrade the artwork condition
+  def upgrade
+    # to do: cap at max status
+    @artwork.status = (Artwork.statuses[@artwork.status]||0) + 1
+    respond_to do |format|
+      if @artwork.save
+        format.json { render :show, status: :ok, location: @artwork }
+      else
+        format.json { render json: @artwork.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # downgrade the artwork condition
+  def downgrade
+    # to do: cap at min status
+    @artwork.status = (Artwork.statuses[@artwork.status]||0) - 1
+    respond_to do |format|
+      if @artwork.save
+        format.json { render :show, status: :ok, location: @artwork }
+      else
+        format.json { render json: @artwork.errors, status: :unprocessable_entity }
+      end
     end
   end
 

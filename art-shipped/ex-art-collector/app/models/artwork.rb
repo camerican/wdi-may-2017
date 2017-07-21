@@ -1,4 +1,5 @@
 class Artwork < ApplicationRecord
+  enum :status => [:na, :poor, :fair, :good, :excellent]
   belongs_to :artist
   has_many :artwork_keywords
   has_many :keywords, through: :artwork_keywords
